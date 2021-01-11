@@ -33,3 +33,5 @@ UIS.inputEnded:Connect(function(input))
         _G.aim = false
     end
 end)
+
+-- aimbot above done.
