@@ -1,7 +1,3 @@
-script.parent.Selectable = true
-script.Parent.Active = true
-script.parent.Draggable = true
-
 game:GetService("StarterGui"):SetCore("SendNotification",{
 	Title    = "bruhHub",
 	Text     = "bruhHub has been loaded! Enjoy.",
@@ -10,10 +6,11 @@ game:GetService("StarterGui"):SetCore("SendNotification",{
 
 local MainGUI = Instance.new("ScreenGui")
 local MainFrame = Instance.new("Frame")
-local AimbotButton = Instance.new("TextButton")
+local CriminalButton = Instance.new("TextButton")
 local CloseButton = Instance.new("TextButton")
 local MadebyLabel = Instance.new("TextLabel")
 local NameLabel = Instance.new("TextLabel")
+local NeutralButton = Instance.new("TextButton")
 local OpenFrame = Instance.new("Frame")
 local OpenButton = Instance.new("TextButton")
  
@@ -25,24 +22,25 @@ MainFrame.Name = "MainFrame"
 MainFrame.Parent = MainGUI
 MainFrame.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
 MainFrame.BorderColor3 = Color3.new(0.117647, 0.117647, 0.117647)
-MainFrame.Position = UDim2.new(0.756007075, 0, 0.439478576, 0)
-MainFrame.Size = UDim2.new(0, 233, 0, 265)
+MainFrame.Position = UDim2.new(0.759773552, 0, 0.461824954, 0)
+MainFrame.Size = UDim2.new(0, 244, 0, 265)
+MainFrame.Visible = false
 
-AimbotButton.Name = "AimbotButton"
-AimbotButton.Parent = MainFrame
-AimbotButton.BackgroundColor3 = Color3.new(0.137255, 0.137255, 0.137255)
-AimbotButton.BorderColor3 = Color3.new(0.137255, 0.137255, 0.137255)
-AimbotButton.Position = UDim2.new(0.0386266112, 0, 0.150943398, 0)
-AimbotButton.Size = UDim2.new(0, 104, 0, 27)
-AimbotButton.Font = Enum.Font.SourceSans
-AimbotButton.Text = "admin test"
-AimbotButton.TextColor3 = Color3.new(1, 1, 1)
-AimbotButton.TextScaled = true
-AimbotButton.TextSize = 14
-AimbotButton.TextStrokeColor3 = Color3.new(1, 1, 1)
-AimbotButton.TextWrapped = true
-AimbotButton.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet(('https://pastebin.com/raw/tzTXmYf2'),true))()
+CriminalButton.Name = "CriminalButton"
+CriminalButton.Parent = MainFrame
+CriminalButton.BackgroundColor3 = Color3.new(0.137255, 0.137255, 0.137255)
+CriminalButton.BorderColor3 = Color3.new(0.137255, 0.137255, 0.137255)
+CriminalButton.Position = UDim2.new(0.0386266112, 0, 0.150943398, 0)
+CriminalButton.Size = UDim2.new(0, 104, 0, 27)
+CriminalButton.Font = Enum.Font.SourceSans
+CriminalButton.Text = "Criminal Base"
+CriminalButton.TextColor3 = Color3.new(1, 1, 1)
+CriminalButton.TextScaled = true
+CriminalButton.TextSize = 14
+CriminalButton.TextStrokeColor3 = Color3.new(1, 1, 1)
+CriminalButton.TextWrapped = true
+CriminalButton.MouseButton1Click:connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-943, 96, 2055)
 end)
 
 CloseButton.Name = "CloseButton"
@@ -58,6 +56,10 @@ CloseButton.TextScaled = true
 CloseButton.TextSize = 14
 CloseButton.TextStrokeColor3 = Color3.new(1, 1, 1)
 CloseButton.TextWrapped = true
+CloseButton.MouseButton1Down:connect(function()
+	OpenButton.Visible = true
+	MainFrame.Visible = false
+end)
 
 MadebyLabel.Name = "MadebyLabel"
 MadebyLabel.Parent = MainFrame
@@ -77,14 +79,32 @@ NameLabel.Name = "NameLabel"
 NameLabel.Parent = MainFrame
 NameLabel.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.117647)
 NameLabel.BorderColor3 = Color3.new(0.117647, 0.117647, 0.117647)
+NameLabel.Position = UDim2.new(0.0204918031, 0, 0, 0)
 NameLabel.Size = UDim2.new(0, 233, 0, 26)
 NameLabel.Font = Enum.Font.SciFi
-NameLabel.Text = "bruhHub"
+NameLabel.Text = "bruhHub | Prison Life"
 NameLabel.TextColor3 = Color3.new(1, 1, 1)
 NameLabel.TextScaled = true
 NameLabel.TextSize = 14
 NameLabel.TextStrokeColor3 = Color3.new(1, 1, 1)
 NameLabel.TextWrapped = true
+
+NeutralButton.Name = "NeutralButton"
+NeutralButton.Parent = MainFrame
+NeutralButton.BackgroundColor3 = Color3.new(0.137255, 0.137255, 0.137255)
+NeutralButton.BorderColor3 = Color3.new(0.137255, 0.137255, 0.137255)
+NeutralButton.Position = UDim2.new(0.524959505, 0, 0.150943398, 0)
+NeutralButton.Size = UDim2.new(0, 104, 0, 27)
+NeutralButton.Font = Enum.Font.SourceSans
+NeutralButton.Text = "Neutral Team"
+NeutralButton.TextColor3 = Color3.new(1, 1, 1)
+NeutralButton.TextScaled = true
+NeutralButton.TextSize = 14
+NeutralButton.TextStrokeColor3 = Color3.new(1, 1, 1)
+NeutralButton.TextWrapped = true
+NeutralButton.MouseButton1Down:connect(function()
+	workspace.Remote.TeamEvent:FireServer("Medium stone grey")
+end)
 
 OpenFrame.Name = "OpenFrame"
 OpenFrame.Parent = MainGUI
@@ -106,3 +126,7 @@ OpenButton.TextScaled = true
 OpenButton.TextSize = 14
 OpenButton.TextStrokeColor3 = Color3.new(1, 1, 1)
 OpenButton.TextWrapped = true
+OpenButton.MouseButton1Down:connect(function()
+	MainFrame.Visible = true
+	OpenButton.Visible = false
+end)
