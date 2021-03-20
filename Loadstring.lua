@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/frostediscool/bruhHub/master/ScriptHub/Loader.lua"))()

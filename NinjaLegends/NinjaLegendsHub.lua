@@ -14,8 +14,6 @@ a:Button("AntiAfk", function()
     end)
 end)
 
-a:DestoryGui()
-
 b:Button("BuyAllBelts", function()
     local A_1 = "buyAllBelts"
     local A_2 = "Ground"
