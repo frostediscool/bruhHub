@@ -109,12 +109,14 @@ function Utilities:Teleport(x,y,z)
     PS.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(x,y,z)
 end
 
-function Utilities:Noti(title,text,duration)
+function Utilities:SendNotification()
     game:GetService("StarterGui"):SetCore("SendNotification",{
-        Title = title;
-        Text = text;
-        Duration = duration;
+        Title = frostedHub;
+        Text = Hope you enjoy exploiting.;
+        Duration = 5;
     })
 end
 
 return Utilities
+
+--copied from another person bc uhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh my script no work
