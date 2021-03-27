@@ -5,7 +5,7 @@ local w = library:CreateWindow("frostedHub")
 local a = w:CreateFolder("Saber Simulator")
 local b = w:CreateFolder("AutoFarm")
 local c = w:CreateFolder("Shop")
-local d = w:CreateFolder("Flags")
+local d = w:CreateFolder("Flags (ONE AT A TIME)")
 
 a:Button("AntiAFK",function()
         local vu = game:GetService("VirtualUser")
@@ -34,12 +34,12 @@ end)
 
 b:Button("AutoSell",function()
     while true do
-        local player = game.Players.LocalPlayer.Character.HumanoidRootPart
-        local cfbeforetp = player.CFrame
-        player.CFrame = CFrame.new(532, 183, 151)
-        wait(0.3)
-        player.CFrame = cfbeforetp
-        wait(1)
+            local player = game.Players.LocalPlayer.Character.HumanoidRootPart
+            local cfbeforetp = player.CFrame
+            player.CFrame = CFrame.new(532, 183, 151)
+            wait(5)
+            player.CFrame = cfbeforetp
+            wait(1)
     end
 end)
 
@@ -94,7 +94,7 @@ d:Button("Flag 1", function()
         local player = game.Players.LocalPlayer.Character.HumanoidRootPart
         local cfbeforetp = player.CFrame
         player.CFrame = CFrame.new(630, 436, -102)
-        wait(10)
+        wait(15)
         player.CFrame = cfbeforetp
         wait(3)
 end)
@@ -103,7 +103,7 @@ d:Button("Flag 2", function()
         local player = game.Players.LocalPlayer.Character.HumanoidRootPart
         local cfbeforetp = player.CFrame
         player.CFrame = CFrame.new(439, 245, -258)
-        wait(10)
+        wait(15)
         player.CFrame = cfbeforetp
         wait(3)
 end)
