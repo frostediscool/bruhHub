@@ -5,7 +5,7 @@ local a = w:CreateFolder("Ninja Legends")
 local b = w:CreateFolder("Ground")
 local c = w:CreateFolder("AutoFarm")
 
-a:Button("AntiAfk", function()
+a:Button("AntiAFK", function()
         local vu = game:GetService("VirtualUser")
         game:GetService("Players").LocalPlayer.Idled:connect(function()
         vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
