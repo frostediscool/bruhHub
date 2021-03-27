@@ -76,3 +76,5 @@ c:Button("UnlockAllIslands", function()
         wait(1)
         rootpart.CFrame = cfbeforetp
 end)
+
+a:DestroyGui()
