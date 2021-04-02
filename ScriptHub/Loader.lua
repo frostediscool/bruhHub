@@ -4,7 +4,7 @@ if game.PlaceId == 3956818381 then -- Ninja Legends
 elseif game.PlaceId == 3823781113 then -- Saber Simulator
     Utilities:Load("https://raw.githubusercontent.com/frostediscool/frostedHub/master/SaberSimulator/SaberSimulatorHub.lua")
 elseif game.PlaceId == 155615604 then
-    Utilities:Load("")
+    Utilities:Load("https://raw.githubusercontent.com/frostediscool/frostedHub/master/PrisonLife/PrisonLifeHub.lua")
 else
     game:GetService("Players").LocalPlayer:Kick("[frostedHub] | Game not Supported")
 end
